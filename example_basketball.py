@@ -1,5 +1,10 @@
 #!/usr/bin/env python
+"""compute probability of outcomes to a basketball game where each team only takes one type of shot (2 or 3)
+and has identical number of shot attempts.
 
+    Usage:
+        $ ./example_basketball.py 100 0.4 0.6
+"""
 from scipy.stats import binom
 import numpy as np
 import math
@@ -11,7 +16,8 @@ logging.basicConfig(level=logging.INFO)
 
 
 def parse_args():
-    _desc = "determine the likelihood of winning if each team only shoots 2's or 3's resp"
+    _desc = "determine the likelihood of winning if each team only shoots 2's or 3's respectively." \
+            "\nExample:\n\t$ ./example_basketball.py 100 0.4 0.6"
     parser = argparse.ArgumentParser(description=_desc)
     parser.add_argument('shot_attempts', type=int, help='number of shots each team takes')
     parser.add_argument('prob_three', type=float, help='probability of making a three')
